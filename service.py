@@ -209,13 +209,15 @@ def Main():
 
         if nextsong_player.playback_string:
 
-            # log(notification_offset)
+            log(notification_offset)
 
-            # log(runtime_converter(xbmc.getInfoLabel('MusicPlayer.TimeRemaining')))
+            log(runtime_converter(xbmc.getInfoLabel('MusicPlayer.TimeRemaining')))
 
             if runtime_converter(xbmc.getInfoLabel('MusicPlayer.TimeRemaining')) <= notification_offset:
 
                 xbmc.executebuiltin(nextsong_player.playback_string)
+
+                nextsong_player.playback_string = ''
 
 
 
